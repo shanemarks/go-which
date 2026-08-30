@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"path"
+	"path/filepath"
 	"strings"
 )
 
@@ -93,8 +93,8 @@ func buildActions() map[RunMode]Action {
 // We pass in a delegate for the file existance check so its easy to mock out in our tests.
 func which(bin string, pathsToParse string, fileExistsDelegate FileExistsDelegate) []string {
 
-	paths := Map(strings.Split(pathsToParse, ":"), func(s string) string {
-		return path.Join(s, bin)
+	paths := Map(strings.Split(pathsToParse, string(os.PathListSeparator)), func(s string) string {
+		return filepath.Join(s, bin)
 	})
 
 	matches := []string{}
