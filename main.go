@@ -22,6 +22,7 @@ func main() {
 
 	allPointer := flag.Bool("a", false, "Returns all matches")
 	flag.Parse()
+	//any arguments that aren't flags come here
 	arguments := flag.Args()
 	target := ""
 	if len(arguments) > 0 {
