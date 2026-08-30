@@ -31,7 +31,7 @@ func main() {
 
 	// Instead of having if/else of switches based on glads, we just calculate a mode and
 	// invoke a function based on that mode.
-	runMode := calculateRunMode(len(os.Args) >= 2, *allPointer)
+	runMode := calculateRunMode(target != "", *allPointer)
 	actions := buildActions()
 
 	action, exists := actions[runMode]
@@ -42,11 +42,11 @@ func main() {
 
 }
 
-func calculateRunMode(hasArgs bool, allMode bool) RunMode {
+func calculateRunMode(hasTarget bool, allMode bool) RunMode {
 
 	runMode := ModeUnknown
 
-	if !hasArgs {
+	if !hasTarget {
 		runMode = ModeNoOp
 	} else if allMode {
 		runMode = ModeAll

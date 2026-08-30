@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"slices"
 	"testing"
 
@@ -26,8 +25,5 @@ func MockFileExists(absolutePath string) bool {
 		"/etc/bin/go",
 		"/usr/bin/npm",
 	}
-	fmt.Println(absolutePath)
-
-	fmt.Println(slices.Contains(fileSystem, absolutePath))
 	return slices.Contains(fileSystem, absolutePath)
 }
