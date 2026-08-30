@@ -5,8 +5,7 @@
 
 I built this project as a way to familiarise myself with the Go programming language.  My approach to learning new languages involves rebuilding a simple, real application. In this case I chose the "which" command. 
  
-**I did not use AI** when building this, as that would defeat the learning opportunity.  As a final pass I did use AI to check for some logical bugs though (you can see the changes in the last commit).
-
+I did not use AI when building this, as that would defeat the learning opportunity.  As a final pass I did use AI to check for some logical bugs, and for proof reading of the readme file.
 
 Which is a tool that lets you find where an executable may exist in your path directory. It is a nice test project because it requires working with the filesystem, which means you need to rely on composition to make the logic testable, instead of coupling it with the logic.
 
