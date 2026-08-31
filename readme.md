@@ -45,7 +45,7 @@ if len(arguments) > 0 {
 Perhaps also overkill, I built a map of "Actions" and calculated which action to execute, instead of relying on a chain of if/else in the main body
 
 ```go
-runMode := calculateRunMode(len(os.Args) >= 2, *allPointer)
+runMode := calculateRunMode(target != "", *allPointer)
 actions := buildActions()
 
 action, exists := actions[runMode]
