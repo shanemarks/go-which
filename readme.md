@@ -61,5 +61,7 @@ if exists {
 For testing, I used the `Testify` package so that I could use asserts, which I am used to. I also used a delegate that let me switch out the check for file existence in my unit tests.
 ```go
 func which(bin string, pathsToParse string, fileExistsDelegate FileExistsDelegate) []string {
-`
 ```
+
+#### Building
+I setup a build script with a default GitHub Actions workflow, the only thing I had to change was the go version to match the verison in `go.mod`
